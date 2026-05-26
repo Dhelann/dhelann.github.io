@@ -4,109 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Ashley</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
-
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    overflow: hidden;
-    font-family: 'Caveat', cursive;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  overflow: hidden;
+  font-family: 'Caveat', cursive;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bouquet {
-    width: 260px;
-    max-width: 85vw;
-    cursor: pointer;
-    user-select: none;
-    transition: 0.3s ease;
+  width: 260px;
+  max-width: 85vw;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+  display: block;
 }
 
-.bouquet:active {
-    transform: scale(0.97);
-}
+.bouquet:active { transform: scale(0.97); }
 
 .click-text {
-    margin-top: 12px;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-    animation: blink 1.2s infinite;
+  margin-top: 12px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  animation: blink 1.2s infinite;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.5; }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
 }
 
 .letter {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 240px;
-    height: 220px;
-    padding: 16px;
-    background: #fffafc;
-    border-radius: 18px;
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    overflow-y: auto;
-    display: none;
-    animation: fadeIn 0.4s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 220px;
+  padding: 16px;
+  background: #fffafc;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  overflow-y: auto;
+  display: none;
+  animation: fadeIn 0.4s ease;
 }
 
 .letter h1 {
-    font-size: 22px;
-    text-align: center;
-    color: #222;
-    margin-bottom: 10px;
+  font-size: 22px;
+  text-align: center;
+  color: #222;
+  margin-bottom: 10px;
 }
 
 .letter p {
-    font-size: 16px;
-    line-height: 1.45;
-    color: #444;
-    text-align: left;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #444;
+  text-align: left;
 }
 
-.letter::-webkit-scrollbar {
-    width: 4px;
-}
-
-.letter::-webkit-scrollbar-thumb {
-    background: #d6b4c2;
-    border-radius: 10px;
-}
+.letter::-webkit-scrollbar { width: 4px; }
+.letter::-webkit-scrollbar-thumb { background: #d6b4c2; border-radius: 10px; }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -46%);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
+  from { opacity: 0; transform: translate(-50%, -46%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
 }
 
 </style>
@@ -114,231 +94,40 @@ body {
 <body>
 
 <div class="container">
-
-    <img
-        class="bouquet"
-        id="bouquet"
-        src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
-        alt="Bouquet"
-    >
-
-    <div class="click-text" id="clickText">
-        CLICK BOUQUET!!
-    </div>
-
+  <img
+    class="bouquet"
+    id="bouquet"
+    src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
+    alt="Bouquet"
+  >
+  <div class="click-text" id="clickText">CLICK BOUQUET!!</div>
 </div>
 
 <div class="letter" id="letter">
-
-    <h1>For: Ashley (Baby)</h1>
-
-    <p>
-        Every moment without you felt incomplete.<br><br>
-
-        I know words may never fully fix the silence,
-        but this letter carries every apology,
-        every thought of you,
-        and every feeling I never stopped having.<br><br>
-
-        I'm really sorry, baby.<br>
-        Please forgive me for disappearing.<br>
-        I don't want to lose you because you truly mean everything to me.<br>
-        No matter how much time passed, I never stopped thinking about you.
-    </p>
-
+  <h1>For: Ashley (Baby)</h1>
+  <p>
+    Every moment without you felt incomplete.<br><br>
+    I know words may never fully fix the silence,
+    but this letter carries every apology,
+    every thought of you,
+    and every feeling I never stopped having.<br><br>
+    I'm really sorry, baby.<br>
+    Please forgive me for disappearing.<br>
+    I don't want to lose you because you truly mean everything to me.<br>
+    No matter how much time passed, I never stopped thinking about you.
+  </p>
 </div>
 
 <script>
+  var bouquet   = document.getElementById("bouquet");
+  var letter    = document.getElementById("letter");
+  var clickText = document.getElementById("clickText");
 
-const bouquet  = document.getElementById("bouquet");
-const letter   = document.getElementById("letter");
-const clickText = document.getElementById("clickText");
-
-bouquet.onclick = () => {
+  bouquet.addEventListener("click", function () {
     bouquet.style.display   = "none";
     clickText.style.display = "none";
     letter.style.display    = "block";
-};
-
-</script>
-
-</body>
-</html>/* TITLE */
-.letter h1{
-    font-size:22px;
-
-    text-align:center;
-
-    color:#222;
-
-    margin-bottom:10px;
-}
-
-/* MESSAGE */
-.letter p{
-    font-size:16px;
-
-    line-height:1.45;
-
-    color:#444;
-}
-
-/* SCROLLBAR */
-.letter::-webkit-scrollbar{
-    width:4px;
-}
-
-.letter::-webkit-scrollbar-thumb{
-    background:#d7b7c3;
-    border-radius:10px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translate(-50%, -46%);
-    }
-
-    to{
-        opacity:1;
-        transform:translate(-50%, -50%);
-    }
-}
-
-</style>
-</head>
-<body>
-
-<div class="container">
-
-    <img
-    class="bouquet"
-    id="bouquet"
-    src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
-    alt="Bouquet"
-    >
-
-    <div class="click-text" id="clickText">
-        CLICK BOUQUET!!
-    </div>
-
-</div>
-
-<div class="letter" id="letter">
-
-    <h1>For: Ashley (Baby)</h1>
-
-    <p>
-        Every moment without you felt incomplete.<br><br>
-
-        I know words may never fully fix the silence,
-        but this letter carries every apology,
-        every thought of you,
-        and every feeling I never stopped having.<br><br>
-
-        I'm really sorry, baby.<br>
-        Please forgive me for disappearing.<br>
-        I don't want to lose you because you truly mean everything to me.<br>
-        No matter how much time passed, I never stopped thinking about you.
-    </p>
-
-</div>
-
-<script>
-
-const bouquet = document.getElementById("bouquet");
-const letter = document.getElementById("letter");
-const clickText = document.getElementById("clickText");
-
-bouquet.onclick = () => {
-
-    bouquet.style.display = "none";
-
-    clickText.style.display = "none";
-
-    letter.style.display = "block";
-};
-
-</script>
-
-</body>
-</html>.letter p{
-    font-size:16px;
-    line-height:1.4;
-    color:#444;
-    text-align:left;
-}
-
-/* SCROLLBAR */
-.letter::-webkit-scrollbar{
-    width:4px;
-}
-
-.letter::-webkit-scrollbar-thumb{
-    background:#d6b4c2;
-    border-radius:10px;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translate(-50%, -45%);
-    }
-    to{
-        opacity:1;
-        transform:translate(-50%, -50%);
-    }
-}
-</style>
-</head>
-<body>
-
-<div class="container">
-
-    <img
-    class="bouquet"
-    id="bouquet"
-    src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
-    alt="Bouquet"
-    >
-
-    <div class="click-text" id="clickText">
-        CLICK BOUQUET!!
-    </div>
-
-</div>
-
-<div class="letter" id="letter">
-
-    <h1>For: Ashley (Baby)</h1>
-
-    <p>
-        Every moment without you felt incomplete.<br><br>
-
-        I know words may never fully fix the silence,
-        but this letter carries every apology,
-        every thought of you,
-        and every feeling I never stopped having.<br><br>
-
-        I'm really sorry, baby.<br>
-        Please forgive me for disappearing.<br>
-        I don't want to lose you because you truly mean everything to me.<br>
-        No matter how much time passed, I never stopped thinking about you.
-    </p>
-
-</div>
-
-<script>
-const bouquet = document.getElementById("bouquet");
-const letter = document.getElementById("letter");
-const clickText = document.getElementById("clickText");
-
-bouquet.onclick = () => {
-    bouquet.style.display = "none";
-    clickText.style.display = "none";
-    letter.style.display = "block";
-};
+  });
 </script>
 
 </body>

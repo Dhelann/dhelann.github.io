@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -15,15 +16,17 @@
 }
 
 body{
-    width:100%;
+    width:100vw;
     height:100vh;
-    background:white;
-    overflow:hidden;
-    font-family:'Caveat', cursive;
 
     display:flex;
     justify-content:center;
     align-items:center;
+
+    background:white;
+    overflow:hidden;
+
+    font-family:'Caveat', cursive;
 }
 
 /* CENTER EVERYTHING */
@@ -32,29 +35,32 @@ body{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    width:100%;
 }
 
-/* BIGGER CENTERED IMAGE */
+/* BOUQUET */
 .bouquet{
     width:260px;
     max-width:85vw;
+
     cursor:pointer;
-    transition:0.3s ease;
     user-select:none;
+
+    transition:0.3s ease;
 }
 
-.bouquet:hover{
-    transform:scale(1.03);
+.bouquet:active{
+    transform:scale(0.97);
 }
 
-/* CENTERED TEXT */
+/* CLICK TEXT */
 .click-text{
     margin-top:12px;
+
     font-size:24px;
     color:#333;
+
     text-align:center;
+
     animation:blink 1.2s infinite;
 }
 
@@ -62,48 +68,142 @@ body{
     0%,100%{
         opacity:1;
     }
+
     50%{
         opacity:0.5;
     }
 }
 
-/* CENTERED SMALL MESSAGE BOX */
+/* MESSAGE UI */
 .letter{
-    position:absolute;
+    position:fixed;
 
     top:50%;
     left:50%;
+
     transform:translate(-50%, -50%);
 
     width:240px;
     height:220px;
 
-    overflow-y:auto;
+    padding:16px;
 
     background:#fffafc;
 
-    padding:15px;
+    border-radius:18px;
 
-    border-radius:16px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
     border:1px solid rgba(0,0,0,0.06);
+
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+
+    overflow-y:auto;
 
     display:none;
 
-    animation:fadeIn 0.5s ease;
+    animation:fadeIn 0.4s ease;
 }
 
-/* CENTER TITLE */
+/* TITLE */
 .letter h1{
     font-size:22px;
+
     text-align:center;
-    margin-bottom:10px;
+
     color:#222;
+
+    margin-bottom:10px;
 }
 
 /* MESSAGE */
 .letter p{
+    font-size:16px;
+
+    line-height:1.45;
+
+    color:#444;
+}
+
+/* SCROLLBAR */
+.letter::-webkit-scrollbar{
+    width:4px;
+}
+
+.letter::-webkit-scrollbar-thumb{
+    background:#d7b7c3;
+    border-radius:10px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translate(-50%, -46%);
+    }
+
+    to{
+        opacity:1;
+        transform:translate(-50%, -50%);
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <img
+    class="bouquet"
+    id="bouquet"
+    src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
+    alt="Bouquet"
+    >
+
+    <div class="click-text" id="clickText">
+        CLICK BOUQUET!!
+    </div>
+
+</div>
+
+<div class="letter" id="letter">
+
+    <h1>For: Ashley (Baby)</h1>
+
+    <p>
+        Every moment without you felt incomplete.<br><br>
+
+        I know words may never fully fix the silence,
+        but this letter carries every apology,
+        every thought of you,
+        and every feeling I never stopped having.<br><br>
+
+        I'm really sorry, baby.<br>
+        Please forgive me for disappearing.<br>
+        I don't want to lose you because you truly mean everything to me.<br>
+        No matter how much time passed, I never stopped thinking about you.
+    </p>
+
+</div>
+
+<script>
+
+const bouquet = document.getElementById("bouquet");
+const letter = document.getElementById("letter");
+const clickText = document.getElementById("clickText");
+
+bouquet.onclick = () => {
+
+    bouquet.style.display = "none";
+
+    clickText.style.display = "none";
+
+    letter.style.display = "block";
+};
+
+</script>
+
+</body>
+</html>.letter p{
     font-size:16px;
     line-height:1.4;
     color:#444;

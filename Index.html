@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ashley</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        width:100%;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:white;
+        overflow:hidden;
+        font-family:'Caveat', cursive;
+    }
+
+    .bouquet{
+        width:260px;
+        cursor:pointer;
+        transition:0.4s ease;
+        user-select:none;
+    }
+
+    .bouquet:hover{
+        transform:scale(1.05);
+    }
+
+    .letter{
+        position:absolute;
+        width:430px;
+        max-width:90%;
+        background:#fffafc;
+        padding:35px;
+        border-radius:18px;
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+        backdrop-filter:blur(4px);
+        border:1px solid rgba(0,0,0,0.08);
+        display:none;
+        animation:fadeIn 0.7s ease;
+    }
+
+    .letter h1{
+        font-size:42px;
+        margin-bottom:20px;
+        color:#222;
+        text-align:center;
+    }
+
+    .letter p{
+        font-size:30px;
+        color:#444;
+        line-height:1.5;
+        text-align:left;
+    }
+
+    @keyframes fadeIn{
+        from{
+            opacity:0;
+            transform:translateY(20px);
+        }
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+</style>
+</head>
+<body>
+
+<img 
+class="bouquet" 
+id="bouquet"
+src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
+alt="Bouquet"
+>
+
+<div class="letter" id="letter">
+
+    <h1>For: Ashley (Baby)</h1>
+
+    <p>
+        Every moment without you felt incomplete.<br><br>
+
+        I know words may never fully fix the silence,
+        but this letter carries every apology,
+        every thought of you,
+        and every feeling I never stopped having.<br><br>
+
+        I'm really sorry, baby.<br>
+        Please forgive me for disappearing.<br>
+        I don't want to lose you because you truly mean everything to me.<br>
+        No matter how much time passed, I never stopped thinking about you.
+    </p>
+
+</div>
+
+<script>
+    const bouquet = document.getElementById("bouquet");
+    const letter = document.getElementById("letter");
+
+    bouquet.onclick = () => {
+        bouquet.style.display = "none";
+        letter.style.display = "block";
+    };
+</script>
+
+</body>
+</html>

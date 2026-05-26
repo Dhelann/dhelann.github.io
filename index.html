@@ -9,101 +9,161 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    width:100vw;
-    height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:white;
-    overflow:hidden;
-
-    font-family:'Caveat', cursive;
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    overflow: hidden;
+    font-family: 'Caveat', cursive;
 }
 
-/* CENTER EVERYTHING */
-.container{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* BOUQUET */
-.bouquet{
-    width:260px;
-    max-width:85vw;
-
-    cursor:pointer;
-    user-select:none;
-
-    transition:0.3s ease;
+.bouquet {
+    width: 260px;
+    max-width: 85vw;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s ease;
 }
 
-.bouquet:active{
-    transform:scale(0.97);
+.bouquet:active {
+    transform: scale(0.97);
 }
 
-/* CLICK TEXT */
-.click-text{
-    margin-top:12px;
-
-    font-size:24px;
-    color:#333;
-
-    text-align:center;
-
-    animation:blink 1.2s infinite;
+.click-text {
+    margin-top: 12px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    animation: blink 1.2s infinite;
 }
 
-@keyframes blink{
-    0%,100%{
-        opacity:1;
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.5; }
+}
+
+.letter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 220px;
+    padding: 16px;
+    background: #fffafc;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    overflow-y: auto;
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.letter h1 {
+    font-size: 22px;
+    text-align: center;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.letter p {
+    font-size: 16px;
+    line-height: 1.45;
+    color: #444;
+    text-align: left;
+}
+
+.letter::-webkit-scrollbar {
+    width: 4px;
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background: #d6b4c2;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -46%);
     }
-
-    50%{
-        opacity:0.5;
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
     }
 }
 
-/* MESSAGE UI */
-.letter{
-    position:fixed;
+</style>
+</head>
+<body>
 
-    top:50%;
-    left:50%;
+<div class="container">
 
-    transform:translate(-50%, -50%);
+    <img
+        class="bouquet"
+        id="bouquet"
+        src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
+        alt="Bouquet"
+    >
 
-    width:240px;
-    height:220px;
+    <div class="click-text" id="clickText">
+        CLICK BOUQUET!!
+    </div>
 
-    padding:16px;
+</div>
 
-    background:#fffafc;
+<div class="letter" id="letter">
 
-    border-radius:18px;
+    <h1>For: Ashley (Baby)</h1>
 
-    border:1px solid rgba(0,0,0,0.06);
+    <p>
+        Every moment without you felt incomplete.<br><br>
 
-    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+        I know words may never fully fix the silence,
+        but this letter carries every apology,
+        every thought of you,
+        and every feeling I never stopped having.<br><br>
 
-    overflow-y:auto;
+        I'm really sorry, baby.<br>
+        Please forgive me for disappearing.<br>
+        I don't want to lose you because you truly mean everything to me.<br>
+        No matter how much time passed, I never stopped thinking about you.
+    </p>
 
-    display:none;
+</div>
 
-    animation:fadeIn 0.4s ease;
-}
+<script>
 
-/* TITLE */
+const bouquet  = document.getElementById("bouquet");
+const letter   = document.getElementById("letter");
+const clickText = document.getElementById("clickText");
+
+bouquet.onclick = () => {
+    bouquet.style.display   = "none";
+    clickText.style.display = "none";
+    letter.style.display    = "block";
+};
+
+</script>
+
+</body>
+</html>/* TITLE */
 .letter h1{
     font-size:22px;
 

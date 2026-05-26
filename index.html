@@ -17,28 +17,31 @@
 body{
     width:100%;
     height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     background:white;
     overflow:hidden;
     font-family:'Caveat', cursive;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 /* CENTER EVERYTHING */
 .container{
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    text-align:center;
     width:100%;
 }
 
-/* BIG MOBILE IMAGE */
+/* BIGGER CENTERED IMAGE */
 .bouquet{
     width:260px;
+    max-width:85vw;
     cursor:pointer;
-    transition:0.3s;
+    transition:0.3s ease;
     user-select:none;
 }
 
@@ -46,11 +49,12 @@ body{
     transform:scale(1.03);
 }
 
-/* TEXT UNDER IMAGE */
+/* CENTERED TEXT */
 .click-text{
-    margin-top:10px;
+    margin-top:12px;
     font-size:24px;
     color:#333;
+    text-align:center;
     animation:blink 1.2s infinite;
 }
 
@@ -63,14 +67,21 @@ body{
     }
 }
 
-/* SMALL MOBILE MESSAGE BOX */
+/* CENTERED SMALL MESSAGE BOX */
 .letter{
     position:absolute;
+
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
     width:240px;
     height:220px;
+
     overflow-y:auto;
 
     background:#fffafc;
+
     padding:15px;
 
     border-radius:16px;
@@ -83,7 +94,7 @@ body{
     animation:fadeIn 0.5s ease;
 }
 
-/* TITLE */
+/* CENTER TITLE */
 .letter h1{
     font-size:22px;
     text-align:center;
@@ -96,6 +107,7 @@ body{
     font-size:16px;
     line-height:1.4;
     color:#444;
+    text-align:left;
 }
 
 /* SCROLLBAR */
@@ -111,11 +123,11 @@ body{
 @keyframes fadeIn{
     from{
         opacity:0;
-        transform:translateY(15px);
+        transform:translate(-50%, -45%);
     }
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:translate(-50%, -50%);
     }
 }
 </style>
@@ -167,71 +179,6 @@ bouquet.onclick = () => {
     clickText.style.display = "none";
     letter.style.display = "block";
 };
-</script>
-
-</body>
-</html>        border-radius:10px;
-    }
-
-    @keyframes fadeIn{
-        from{
-            opacity:0;
-            transform:translateY(20px);
-        }
-        to{
-            opacity:1;
-            transform:translateY(0);
-        }
-    }
-</style>
-</head>
-<body>
-
-<div class="container">
-
-    <img 
-    class="bouquet" 
-    id="bouquet"
-    src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
-    alt="Bouquet"
-    >
-
-    <div class="click-text" id="clickText">
-        CLICK BOUQUET!!
-    </div>
-
-</div>
-
-<div class="letter" id="letter">
-
-    <h1>For: Ashley (Baby)</h1>
-
-    <p>
-        Every moment without you felt incomplete.<br><br>
-
-        I know words may never fully fix the silence,
-        but this letter carries every apology,
-        every thought of you,
-        and every feeling I never stopped having.<br><br>
-
-        I'm really sorry, baby.<br>
-        Please forgive me for disappearing.<br>
-        I don't want to lose you because you truly mean everything to me.<br>
-        No matter how much time passed, I never stopped thinking about you.
-    </p>
-
-</div>
-
-<script>
-    const bouquet = document.getElementById("bouquet");
-    const letter = document.getElementById("letter");
-    const clickText = document.getElementById("clickText");
-
-    bouquet.onclick = () => {
-        bouquet.style.display = "none";
-        clickText.style.display = "none";
-        letter.style.display = "block";
-    };
 </script>
 
 </body>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,10 +23,19 @@
         background:white;
         overflow:hidden;
         font-family:'Caveat', cursive;
+        padding:20px;
+    }
+
+    .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
     }
 
     .bouquet{
-        width:260px;
+        width:220px;
+        max-width:75vw;
         cursor:pointer;
         transition:0.4s ease;
         user-select:none;
@@ -37,12 +45,29 @@
         transform:scale(1.05);
     }
 
+    .click-text{
+        margin-top:12px;
+        font-size:28px;
+        color:#333;
+        animation:blink 1.2s infinite;
+        text-align:center;
+    }
+
+    @keyframes blink{
+        0%,100%{
+            opacity:1;
+        }
+        50%{
+            opacity:0.5;
+        }
+    }
+
     .letter{
         position:absolute;
-        width:430px;
-        max-width:90%;
+        width:90%;
+        max-width:340px;
         background:#fffafc;
-        padding:35px;
+        padding:22px;
         border-radius:18px;
         box-shadow:0 10px 30px rgba(0,0,0,0.1);
         backdrop-filter:blur(4px);
@@ -52,16 +77,16 @@
     }
 
     .letter h1{
-        font-size:42px;
-        margin-bottom:20px;
+        font-size:30px;
+        margin-bottom:14px;
         color:#222;
         text-align:center;
     }
 
     .letter p{
-        font-size:30px;
+        font-size:22px;
         color:#444;
-        line-height:1.5;
+        line-height:1.45;
         text-align:left;
     }
 
@@ -75,16 +100,48 @@
             transform:translateY(0);
         }
     }
+
+    @media (max-width:480px){
+
+        .bouquet{
+            width:180px;
+        }
+
+        .click-text{
+            font-size:24px;
+        }
+
+        .letter{
+            max-width:300px;
+            padding:18px;
+        }
+
+        .letter h1{
+            font-size:26px;
+        }
+
+        .letter p{
+            font-size:19px;
+        }
+    }
 </style>
 </head>
 <body>
 
-<img 
-class="bouquet" 
-id="bouquet"
-src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
-alt="Bouquet"
->
+<div class="container">
+
+    <img 
+    class="bouquet" 
+    id="bouquet"
+    src="https://raw.githubusercontent.com/Dhelann/dhelann.github.io/main/Assets/bouquet.png"
+    alt="Bouquet"
+    >
+
+    <div class="click-text" id="clickText">
+        CLICK BOUQUET!!
+    </div>
+
+</div>
 
 <div class="letter" id="letter">
 
@@ -109,9 +166,11 @@ alt="Bouquet"
 <script>
     const bouquet = document.getElementById("bouquet");
     const letter = document.getElementById("letter");
+    const clickText = document.getElementById("clickText");
 
     bouquet.onclick = () => {
         bouquet.style.display = "none";
+        clickText.style.display = "none";
         letter.style.display = "block";
     };
 </script>
